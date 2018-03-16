@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ http://example.com/index.php?accion=$1 [L]
+RewriteCond %{HTTP_HOST} ^webmail\.
+RewriteCond %{HTTPS} on
+RewriteRule ^/(.*) http://example.com/$1 [P]
